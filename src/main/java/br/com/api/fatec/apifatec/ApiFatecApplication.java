@@ -14,10 +14,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import br.com.api.fatec.apifatec.domain.cliente.ClienteRepository;
+import br.com.api.fatec.apifatec.domain.fornecedor.FornecedorRepository;
 import br.com.api.fatec.apifatec.domain.pedidovenda.PedidoVendaRepository;
 import br.com.api.fatec.apifatec.domain.produto.ProdutoRepository;
 import br.com.api.fatec.apifatec.entities.Cliente;
-
+import br.com.api.fatec.apifatec.entities.Fornecedor;
 import br.com.api.fatec.apifatec.entities.Produto;
 
 @SpringBootApplication
@@ -25,7 +26,8 @@ public class ApiFatecApplication {
 	@Bean
 	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository,
 								 @Autowired ProdutoRepository produtoRepository,
-								 @Autowired PedidoVendaRepository pedidoVendaRepository
+								 @Autowired PedidoVendaRepository pedidoVendaRepository,
+								 @Autowired FornecedorRepository fornecedorRepository
 								 ) {
 		return args -> {
 			Cliente cliente = new Cliente();
@@ -329,6 +331,18 @@ public class ApiFatecApplication {
 
 // Salvando Pedido 6
 			pedidoVendaRepository.save(ped6);
+			
+			
+			Fornecedor fornecedor1 = new Fornecedor();
+	        fornecedor1.setNome("Fornecedor A");
+	        fornecedor1.setContato("159916721");
+	        fornecedorRepository.save(fornecedor1);
+
+	        Fornecedor fornecedor2 = new Fornecedor();
+	        fornecedor2.setNome("Fornecedor B");
+	        fornecedor2.setContato("159910121");
+	        fornecedorRepository.save(fornecedor2);
+	   
 
 		};
 	}
