@@ -134,43 +134,43 @@ public class ApiFatecApplication {
 			LocalDate data = LocalDate.now();
 			ped.setEmissao(data);
 
-			//Instanciando PedidoVendaItem na variavel item1
+			
 			PedidoVendaItem item1 = new PedidoVendaItem();
 
-			//Inserindo valores nas propriedades de PedidoVendaItem
+			
 			item1.setProduto(produto);
 			item1.setQuantidade(10);
 			item1.setValorUnitario(new BigDecimal(10));
 			item1.setValorTotal(item1.getValorUnitario().multiply(BigDecimal.valueOf(item1.getQuantidade())));
 
-			//Adicionando Item no Pedido Venda
+			
 			ped.addItem(item1);
 
-			//Instanciando PedidoVendaItem na variavel item2
+			
 			PedidoVendaItem item2 = new PedidoVendaItem();
 
-			//Inserindo valores nas propriedades de PedidoVendaItem
+		
 			item2.setProduto(produto);
 			item2.setQuantidade(10);
 			item2.setValorUnitario(new BigDecimal(10));
 			item2.setValorTotal(item2.getValorUnitario().multiply(BigDecimal.valueOf(item2.getQuantidade())));
 
-			//Adicionando Item no Pedido Venda
+		
 			ped.addItem(item2);
 
-			//Calculando total dos itens do Pedido Venda
+		
 			ped.setTotal();
 
-			//Salvando Pedido Venda
+		
 			pedidoVendaRepository.save(ped);
 
-			// Pedido de Venda 1 para cliente2
+
 			PedidoVenda ped1 = new PedidoVenda();
 			ped1.setCliente(cliente2);
 			ped1.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped1.setEmissao(LocalDate.now());
 
-			// Item 1 do Pedido 1
+	
 			PedidoVendaItem item1_1 = new PedidoVendaItem();
 			item1_1.setProduto(produto);
 			item1_1.setQuantidade(10);
@@ -178,7 +178,7 @@ public class ApiFatecApplication {
 			item1_1.setValorTotal(item1_1.getValorUnitario().multiply(BigDecimal.valueOf(item1_1.getQuantidade())));
 			ped1.addItem(item1_1);
 
-			// Item 2 do Pedido 1
+			
 			PedidoVendaItem item1_2 = new PedidoVendaItem();
 			item1_2.setProduto(produto);
 			item1_2.setQuantidade(10);
@@ -186,19 +186,19 @@ public class ApiFatecApplication {
 			item1_2.setValorTotal(item1_2.getValorUnitario().multiply(BigDecimal.valueOf(item1_2.getQuantidade())));
 			ped1.addItem(item1_2);
 
-			// Calculando total dos itens do Pedido 1
+	
 			ped1.setTotal();
 
-			// Salvando Pedido 1
+		
 			pedidoVendaRepository.save(ped1);
 
-			// Pedido de Venda 2 para cliente3
+		
 			PedidoVenda ped2 = new PedidoVenda();
 			ped2.setCliente(cliente3);
 			ped2.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped2.setEmissao(LocalDate.now());
 
-			// Item 1 do Pedido 2
+		
 			PedidoVendaItem item2_1 = new PedidoVendaItem();
 			item2_1.setProduto(produto);
 			item2_1.setQuantidade(5);
@@ -206,7 +206,7 @@ public class ApiFatecApplication {
 			item2_1.setValorTotal(item2_1.getValorUnitario().multiply(BigDecimal.valueOf(item2_1.getQuantidade())));
 			ped2.addItem(item2_1);
 
-			// Item 2 do Pedido 2
+			
 			PedidoVendaItem item2_2 = new PedidoVendaItem();
 			item2_2.setProduto(produto);
 			item2_2.setQuantidade(8);
@@ -214,19 +214,19 @@ public class ApiFatecApplication {
 			item2_2.setValorTotal(item2_2.getValorUnitario().multiply(BigDecimal.valueOf(item2_2.getQuantidade())));
 			ped2.addItem(item2_2);
 
-			// Calculando total dos itens do Pedido 2
+
 			ped2.setTotal();
 
-			// Salvando Pedido 2
+			
 			pedidoVendaRepository.save(ped2);
 
-			// Pedido de Venda 3 para cliente4
+		
 			PedidoVenda ped3 = new PedidoVenda();
 			ped3.setCliente(cliente4);
 			ped3.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped3.setEmissao(LocalDate.now());
 
-// Item 1 do Pedido 3
+
 			PedidoVendaItem item3_1 = new PedidoVendaItem();
 			item3_1.setProduto(produto);
 			item3_1.setQuantidade(7);
@@ -234,7 +234,7 @@ public class ApiFatecApplication {
 			item3_1.setValorTotal(item3_1.getValorUnitario().multiply(BigDecimal.valueOf(item3_1.getQuantidade())));
 			ped3.addItem(item3_1);
 
-// Item 2 do Pedido 3
+
 			PedidoVendaItem item3_2 = new PedidoVendaItem();
 			item3_2.setProduto(produto);
 			item3_2.setQuantidade(12);
@@ -242,19 +242,19 @@ public class ApiFatecApplication {
 			item3_2.setValorTotal(item3_2.getValorUnitario().multiply(BigDecimal.valueOf(item3_2.getQuantidade())));
 			ped3.addItem(item3_2);
 
-// Calculando total dos itens do Pedido 3
+
 			ped3.setTotal();
 
-// Salvando Pedido 3
+
 			pedidoVendaRepository.save(ped3);
 
-// Pedido de Venda 4 para cliente5
+
 			PedidoVenda ped4 = new PedidoVenda();
 			ped4.setCliente(cliente5);
 			ped4.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped4.setEmissao(LocalDate.now());
 
-// Item 1 do Pedido 4
+
 			PedidoVendaItem item4_1 = new PedidoVendaItem();
 			item4_1.setProduto(produto);
 			item4_1.setQuantidade(15);
@@ -262,7 +262,7 @@ public class ApiFatecApplication {
 			item4_1.setValorTotal(item4_1.getValorUnitario().multiply(BigDecimal.valueOf(item4_1.getQuantidade())));
 			ped4.addItem(item4_1);
 
-// Item 2 do Pedido 4
+
 			PedidoVendaItem item4_2 = new PedidoVendaItem();
 			item4_2.setProduto(produto);
 			item4_2.setQuantidade(5);
@@ -270,19 +270,19 @@ public class ApiFatecApplication {
 			item4_2.setValorTotal(item4_2.getValorUnitario().multiply(BigDecimal.valueOf(item4_2.getQuantidade())));
 			ped4.addItem(item4_2);
 
-// Calculando total dos itens do Pedido 4
+
 			ped4.setTotal();
 
-// Salvando Pedido 4
+
 			pedidoVendaRepository.save(ped4);
 
-// Pedido de Venda 5 para cliente6
+
 			PedidoVenda ped5 = new PedidoVenda();
 			ped5.setCliente(cliente6);
 			ped5.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped5.setEmissao(LocalDate.now());
 
-// Item 1 do Pedido 5
+
 			PedidoVendaItem item5_1 = new PedidoVendaItem();
 			item5_1.setProduto(produto);
 			item5_1.setQuantidade(20);
@@ -290,7 +290,7 @@ public class ApiFatecApplication {
 			item5_1.setValorTotal(item5_1.getValorUnitario().multiply(BigDecimal.valueOf(item5_1.getQuantidade())));
 			ped5.addItem(item5_1);
 
-// Item 2 do Pedido 5
+
 			PedidoVendaItem item5_2 = new PedidoVendaItem();
 			item5_2.setProduto(produto);
 			item5_2.setQuantidade(3);
@@ -298,19 +298,19 @@ public class ApiFatecApplication {
 			item5_2.setValorTotal(item5_2.getValorUnitario().multiply(BigDecimal.valueOf(item5_2.getQuantidade())));
 			ped5.addItem(item5_2);
 
-// Calculando total dos itens do Pedido 5
+
 			ped5.setTotal();
 
-// Salvando Pedido 5
+
 			pedidoVendaRepository.save(ped5);
 
-// Pedido de Venda 6 para cliente7
+
 			PedidoVenda ped6 = new PedidoVenda();
 			ped6.setCliente(cliente7);
 			ped6.setStatus(PedidoVendaStatusEnum.CONCLUIDO);
 			ped6.setEmissao(LocalDate.now());
 
-// Item 1 do Pedido 6
+
 			PedidoVendaItem item6_1 = new PedidoVendaItem();
 			item6_1.setProduto(produto);
 			item6_1.setQuantidade(8);
@@ -318,7 +318,7 @@ public class ApiFatecApplication {
 			item6_1.setValorTotal(item6_1.getValorUnitario().multiply(BigDecimal.valueOf(item6_1.getQuantidade())));
 			ped6.addItem(item6_1);
 
-// Item 2 do Pedido 6
+
 			PedidoVendaItem item6_2 = new PedidoVendaItem();
 			item6_2.setProduto(produto);
 			item6_2.setQuantidade(10);
@@ -326,22 +326,38 @@ public class ApiFatecApplication {
 			item6_2.setValorTotal(item6_2.getValorUnitario().multiply(BigDecimal.valueOf(item6_2.getQuantidade())));
 			ped6.addItem(item6_2);
 
-// Calculando total dos itens do Pedido 6
+
 			ped6.setTotal();
 
-// Salvando Pedido 6
+
 			pedidoVendaRepository.save(ped6);
 			
 			
 			Fornecedor fornecedor1 = new Fornecedor();
-	        fornecedor1.setNome("Fornecedor A");
+	        fornecedor1.setNome("Danilo");
 	        fornecedor1.setContato("159916721");
 	        fornecedorRepository.save(fornecedor1);
 
 	        Fornecedor fornecedor2 = new Fornecedor();
-	        fornecedor2.setNome("Fornecedor B");
+	        fornecedor2.setNome("Lucas");
 	        fornecedor2.setContato("159910121");
 	        fornecedorRepository.save(fornecedor2);
+	        
+	        Fornecedor fornecedor3 = new Fornecedor();
+	        fornecedor3.setNome("Matheus");
+	        fornecedor3.setContato("159916721");
+	        fornecedorRepository.save(fornecedor3);
+	        
+	        Fornecedor fornecedor4 = new Fornecedor();
+	        fornecedor4.setNome("Victor");
+	        fornecedor4.setContato("159916721");
+	        fornecedorRepository.save(fornecedor4);
+	        
+	        Fornecedor fornecedor5 = new Fornecedor();
+	        fornecedor5.setNome("Vitor");
+	        fornecedor5.setContato("159916721");
+	        fornecedorRepository.save(fornecedor5);
+	        
 	   
 
 		};

@@ -28,6 +28,5 @@ public class TotalValorPorClienteDto {
     public TotalValorPorClienteDto(Cliente cliente, BigDecimal total){
         this.cliente = cliente;
         this.total = total;
-
     }
 }

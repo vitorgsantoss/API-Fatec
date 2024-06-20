@@ -23,14 +23,14 @@ public class PedidoVendaController {
     @Autowired
     private PedidoVendaService pedidoVendaService;
 
-	// Adicionar um novo pedido
+	
 	@PostMapping
 	public ResponseEntity<PedidoVenda> adicionarPedido(@RequestBody PedidoVenda pedidoVenda) {
 		PedidoVenda novoPedido = pedidoVendaService.salvarPedidoVenda(pedidoVenda);
 		return ResponseEntity.ok(novoPedido);
 	}
 
-	// Buscar um pedido pelo ID
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<PedidoVenda> buscarPedido(@PathVariable Long id) {
 		Optional<PedidoVenda> pedidoVendaEncontrado = pedidoVendaService.buscarPorId(id);
@@ -40,10 +40,7 @@ public class PedidoVendaController {
 			return ResponseEntity.notFound().build();
 		}
 
-		//FORMA 2
-		/*return pedidoVendaService.buscarPorId(id)
-				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());*/
+		
 	}
 
 	@GetMapping("/pedidos/total-valor-por-cliente")
@@ -52,13 +49,12 @@ public class PedidoVendaController {
 		return ResponseEntity.ok(totalPorCliente);
 	}
 
-	// Listar todos os pedidos
+	
 	@GetMapping
 	public List<PedidoVenda> listarPedidos() {
 		return pedidoVendaService.listarTodos();
 	}
 
-	// Atualizar os dados de um pedido
 	@PutMapping("/{id}")
 	public ResponseEntity<PedidoVenda> atualizarPedido(@PathVariable Long id, @RequestBody PedidoVenda dadosPedido) {
 		try {
@@ -69,7 +65,7 @@ public class PedidoVendaController {
 		}
 	}
 
-	// Cancelar um pedido
+	
 	@PutMapping("/{id}/cancelar")
 	public ResponseEntity<PedidoVenda> cancelarPedido(@PathVariable Long id) {
 		try {
