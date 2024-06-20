@@ -7,11 +7,11 @@ import br.com.api.fatec.apifatec.entities.PedidoVenda;
 import br.com.api.fatec.apifatec.entities.PedidoVendaItem;
 import br.com.api.fatec.apifatec.entities.Produto;
 import br.com.api.fatec.apifatec.shared.enums.PedidoVendaStatusEnum;
+import br.com.api.fatec.apifatec.shared.dto.TotalValorPorClienteDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -85,6 +85,10 @@ public class PedidoVendaService {
 
         pedidoCriar.setTotal(); //calculando total dos itens do pedido e salvando total do pedido venda
         return pedidoVendaRepository.save(pedidoCriar); //criando pedido venda no banco dados e retornando pedido criado
+    }
+
+    public List<TotalValorPorClienteDto> calcularTotalPorCliente() {
+        return pedidoVendaRepository.calcularTotalPorCliente();
     }
 
     public Optional<PedidoVenda> buscarPorId(Long id) {

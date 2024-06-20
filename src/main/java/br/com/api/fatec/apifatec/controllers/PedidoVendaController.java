@@ -1,16 +1,14 @@
 package br.com.api.fatec.apifatec.controllers;
 
 import br.com.api.fatec.apifatec.domain.pedidovenda.PedidoVendaService;
-import br.com.api.fatec.apifatec.entities.Cliente;
 
 import java.util.List;
 import java.util.Optional;
 
 import br.com.api.fatec.apifatec.entities.PedidoVenda;
+import br.com.api.fatec.apifatec.shared.dto.TotalValorPorClienteDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,6 +44,12 @@ public class PedidoVendaController {
 		/*return pedidoVendaService.buscarPorId(id)
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());*/
+	}
+
+	@GetMapping("/pedidos/total-valor-por-cliente")
+	public ResponseEntity<List<TotalValorPorClienteDto>> calcularTotalValorPorCliente() {
+		List<TotalValorPorClienteDto> totalPorCliente = pedidoVendaService.calcularTotalPorCliente();
+		return ResponseEntity.ok(totalPorCliente);
 	}
 
 	// Listar todos os pedidos
